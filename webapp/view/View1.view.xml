@@ -1,0 +1,14 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="madhyam.controller.View1">
+	<App>
+		<pages>
+			<Page title="Madhyam CSR" class="sapUiResponsiveMargin">
+				<VBox>
+					<VBox>
+						<Text text="Short Description: "/>
+						<Text  text="If you had to describe what you are doing in one tweet, how would you do it?"/>
+					</VBox>
+				</VBox>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
