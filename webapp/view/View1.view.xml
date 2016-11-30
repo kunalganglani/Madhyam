@@ -1,12 +1,30 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="madhyam.controller.View1">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="madhyam.controller.View1">
 	<App>
 		<pages>
-			<Page title="Madhyam CSR" class="sapUiResponsiveMargin">
+			<Page title="InOTify" class="sapUiResponsiveMargin">
 				<VBox>
-					<VBox>
-						<Text text="Short Description: anubha jain push "/>
-						<Text  text="If you had to describe what you are doing in one tweet, how would you do it? Kunal can make a push"/>
-					</VBox>
+					<Text text="1-stop Solution for Material Management and Theft Notfication"/>
+					<l:HorizontalLayout id="TileContainerExpanded" allowWrapping="true">
+						<GenericTile header="Material Status" press="statusPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+							<tileContent>
+								<TileContent footer="{footer}">
+									<content>
+										<NumericContent value="{kpivalue}" valueColor="{color}" indicator="{trend}" scale="{scale}"/>
+									</content>
+								</TileContent>
+							</tileContent>
+						</GenericTile>
+						<GenericTile header="Material Info" press="infoPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+							<tileContent>
+								<TileContent footer="{footer}">
+									<content>
+										<NumericContent value="{kpivalue}" valueColor="{color}" indicator="{trend}" scale="{scale}"/>
+									</content>
+								</TileContent>
+							</tileContent>
+						</GenericTile>
+					</l:HorizontalLayout>
 				</VBox>
 			</Page>
 		</pages>
