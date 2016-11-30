@@ -4,7 +4,7 @@
 		<pages>
 			<Page title="InOTify" class="sapUiResponsiveMargin">
 				<VBox>
-					<Text text="1-stop Solution for Material Management and Theft Notfication"/>
+					<Text text="1-stop Solution for Material Management and Theft Notfication by Anubha"/>
 					<l:HorizontalLayout id="TileContainerExpanded" allowWrapping="true">
 						<GenericTile header="Material Status" press="statusPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
 							<tileContent>
