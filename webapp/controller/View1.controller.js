@@ -10,7 +10,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/m/Message
 				var sUrl = "http://services.odata.org/Northwind/Northwind.svc/Products";
 				var oModel = new sap.ui.model.json.JSONModel(sUrl);
 				sap.ui.getCore().setModel(oModel);
-				var aData = [
+				this.aData = [
 				{material_id : "1", material_name : "B1", material_status : 0,material_desc: "10/10 Found", sensor_type:"weight", sensor_model:"xt100", last_check:"2016/12/4"},
 				{material_id : "2", material_name : "B2", material_status : 0, material_desc: "10/10 Found", sensor_type:"weight", sensor_model:"xt100", last_check:"2016/12/4"},
 				{material_id : "3", material_name : "B3", material_status : 1, material_desc: "9/10 Missing Item", sensor_type:"weight", sensor_model:"xt100", last_check:"2016/12/4"},
@@ -23,35 +23,35 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/m/Message
 				{material_id : "10", material_name : "B9", material_status : -1,material_desc: "", sensor_type:"weight", sensor_model:"xt100", last_check:"2016/12/4"},
 				{material_id : "11", material_name : "B10", material_status : -1,material_desc: "", sensor_type:"weight", sensor_model:"xt100", last_check:"2016/12/4"}
 			];
-				for (var i = 0; i < aData.length; i++) {
+				for (var i = 0; i < this.aData.length; i++) {
 					
-					if(aData[i].material_status===0){
-					aData[i].iconType="sap-icon://message-success";	
-					aData[i].m_status_text="Status Ok";
-					aData[i].m_status="Success";
+					if(this.aData[i].material_status===0){
+					this.aData[i].iconType="sap-icon://message-success";	
+					this.aData[i].m_status_text="Status Ok";
+					this.aData[i].m_status="Success";
 					}
-					else	if(aData[i].material_status===1){
-					aData[i].iconType="sap-icon://warning";	
-					aData[i].m_status_text="Product Missing";
-					aData[i].m_status="Warning";
+					else	if(this.aData[i].material_status===1){
+					this.aData[i].iconType="sap-icon://warning";	
+					this.aData[i].m_status_text="Product Missing";
+					this.aData[i].m_status="Warning";
 							
 						}
 					
-					else if(aData[i].material_status===2){
-					aData[i].iconType="sap-icon://alert";
-					aData[i].m_status_text="Product Damaged";
-					aData[i].m_status="Error";
+					else if(this.aData[i].material_status===2){
+					this.aData[i].iconType="sap-icon://alert";
+					this.aData[i].m_status_text="Product Damaged";
+					this.aData[i].m_status="Error";
 					}
 					else{
-						aData[i].iconType="";
-					aData[i].m_status_text="Unkonwn";
-					aData[i].m_status="None";
-					aData[i].material_desc="Connection failed";
+						this.aData[i].iconType="";
+					this.aData[i].m_status_text="Unkonwn";
+					this.aData[i].m_status="None";
+					this.aData[i].material_desc="Connection failed";
 					}
 				}
 			
 				var oTable= this.getView().byId("idPrdList");
-				oTable.setModel(new sap.ui.model.json.JSONModel(aData));
+				oTable.setModel(new sap.ui.model.json.JSONModel(this.aData));
 			oTable.bindItems("/", new sap.m.ColumnListItem({
 												  cells : [
 													  new sap.m.Label({
@@ -87,12 +87,47 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/m/Message
 				// var oTable= this.getView().byId("idPrdList");
 				var dateNow= new Date();
 				var last_check_String=dateNow.toLocaleString();
-				var oTable=evt.getSource().getParent().getParent();
-				for(var i=0;i<oTable.getItems().length;i++){
-				oTable.getItems()[i].getCells()[5].setText(last_check_String);	
+				for(var j=0;j<this.aData.length;j++){
+				this.aData[j].last_check=last_check_String;	
 				}
-				
-				
+				var oTable=evt.getSource().getParent().getParent();
+				oTable.setModel(new sap.ui.model.json.JSONModel(this.aData));
+				var dialog = new sap.m.Dialog({
+						title: "Alert",
+						content: [
+							new sap.m.Text({
+								text: "Some of the Items have Status Missing/ Damaged or Unknown."
+							}).addStyleClass("sapUiForceWidthAuto sapUiSmallMargin"),
+							
+							new sap.m.TextArea('confirmDialogTextarea', {
+							width: '100%',
+							placeholder: 'Add note (optional)'
+							})
+						],
+						beginButton: new sap.m.Button({
+							text: "Contact Product Owner",
+							press: function() {
+								sap.m.MessageToast.show("Product Owner Contacted");
+								dialog.close();
+							}
+						}),
+						endButton: new sap.m.Button({
+							text: "Ignore",
+							press: function() {
+								dialog.close();
+							}
+						}),
+						afterClose: function() {
+							dialog.destroy();
+						}
+					});
+					
+						for (var i = 0; i < this.aData.length; i++) {
+							if(this.aData[i].material_status!==0){
+								dialog.open();
+								break;
+							}
+						}
 			},
 			
 			statusPress: function(evt) {
