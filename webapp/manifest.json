@@ -12,7 +12,7 @@
 		"description": "{{appDescription}}",
 		"dataSources": {
 			"salesShare": {
-				"uri": "",
+				"uri": "http://ld9408:8000/tmp/I311761/oData/ASA_ExposeData.xsodata",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"

@@ -1,7 +1,7 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 	controllerName="madhyam.controller.View1">
 	<App>
-		<VBox>
+<!--		<VBox>
 			<Text text="1-stop Solution for Material Management and Theft Notfication"/>
 			<l:HorizontalLayout id="TileContainerExpanded" allowWrapping="true">
 				<GenericTile header="Material Status" press="statusPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
@@ -23,6 +23,29 @@
 					</tileContent>
 				</GenericTile>
 			</l:HorizontalLayout>
-		</VBox>
+		</VBox>-->
+		<Table id="idPrdList" inset="true" headerText="List of Products">
+			<columns>
+				<Column id="col1" width="2em" vAlign="Middle" hAlign="Left">
+					<Text text="Material Name"/>
+				</Column>
+				<Column id="col2" width="7em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+					<Text text="Material Status"/>
+				</Column>
+				<Column id="col3" width="20em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Left">
+					<Text text="Material Description"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="Material Name 1"/>
+						<Text text="Material Name 2"/>
+						<Text text="Material Name 3"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		
 	</App>
 </mvc:View>
