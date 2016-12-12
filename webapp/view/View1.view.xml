@@ -26,7 +26,7 @@
 		</VBox>-->
 		<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
 			<items>
-				<IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Ok" key="Ok">
+				<IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Status" key="Status">
 					<Table id="idPrdList" inset="true">
 						<headerToolbar>
 							<OverflowToolbar>
@@ -61,9 +61,11 @@
 						</columns>
 					</Table>
 				</IconTabFilter>
-				<IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Heavy" key="Heavy"/>
-				<IconTabFilter icon="sap-icon://inventory" iconColor="Negative" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Overweight"
-					key="Overweight"/>
+				<IconTabFilter icon="sap-icon://inventory" iconColor="Negative" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Transit"
+					key="Transit"><Text text="Table showing vehicles, their location, and shipment id table"/></IconTabFilter>
+				<IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Analytics"
+					key="Analytics"><Text text="Has analytics information shown using vizframs"/></IconTabFilter>
+				<IconTabFilter icon="sap-icon://add-product" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Add" key="Add"><Text text="Form for docing material; Asks for material id, sensor type, sensor model and creates a shipment id in return"/></IconTabFilter>
 			</items>
 		</IconTabBar>
 	</App>
