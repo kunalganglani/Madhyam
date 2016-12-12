@@ -24,38 +24,47 @@
 				</GenericTile>
 			</l:HorizontalLayout>
 		</VBox>-->
-		<Table id="idPrdList" inset="true">
-			<headerToolbar>
-					<OverflowToolbar>
-						<Title text="Material Status Info" id="TableHeader" level="H2"/>
-						<ToolbarSpacer></ToolbarSpacer>
-						<Button press="onTableRefresh" icon="sap-icon://refresh" id="tableRefreshIcon"/>
-						<Button press="onTableSettings" icon="sap-icon://action-settings" id="tableSettingsIcon"/>
-					</OverflowToolbar>
-				</headerToolbar>
-			<columns>
-				<Column id="col1" width="2em" vAlign="Middle" hAlign="Left">
-					<Text text="Material ID"/>
-				</Column>
-				<Column id="col2" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-					<Text text="Material Name"/>
-				</Column>
-				<Column id="col3" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-					<Text text="Material Status"/>
-				</Column>
-				<Column id="col4" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-					<Text text="Sensor Type"/>
-				</Column>
-				<Column id="col5" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-					<Text text="Sensor Model"/>
-				</Column>
-				<Column id="col6" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-					<Text text="Last Checked"/>
-				</Column>
-				<Column id="col7" width="20em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Left">
-					<Text text="Material Description"/>
-				</Column>
-			</columns>
-		</Table>
+		<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Ok" key="Ok">
+					<Table id="idPrdList" inset="true">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title text="Material Status Info" id="TableHeader" level="H2"/>
+								<ToolbarSpacer></ToolbarSpacer>
+								<Button press="onTableRefresh" icon="sap-icon://refresh" id="tableRefreshIcon"/>
+								<Button press="onTableSettings" icon="sap-icon://action-settings" id="tableSettingsIcon"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="col1" width="2em" vAlign="Middle" hAlign="Left">
+								<Text text="Material ID"/>
+							</Column>
+							<Column id="col2" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+								<Text text="Material Name"/>
+							</Column>
+							<Column id="col3" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+								<Text text="Material Status"/>
+							</Column>
+							<Column id="col4" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+								<Text text="Sensor Type"/>
+							</Column>
+							<Column id="col5" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+								<Text text="Sensor Model"/>
+							</Column>
+							<Column id="col6" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+								<Text text="Last Checked"/>
+							</Column>
+							<Column id="col7" width="20em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Left">
+								<Text text="Material Description"/>
+							</Column>
+						</columns>
+					</Table>
+				</IconTabFilter>
+				<IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Heavy" key="Heavy"/>
+				<IconTabFilter icon="sap-icon://inventory" iconColor="Negative" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Overweight"
+					key="Overweight"/>
+			</items>
+		</IconTabBar>
 	</App>
 </mvc:View>

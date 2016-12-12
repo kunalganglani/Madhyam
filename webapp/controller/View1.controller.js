@@ -135,10 +135,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/m/Message
 				}
 			},
 
+			handleIconTabBarSelect: function (oEvent) {
+				var sKey = oEvent.getParameter("key");
+			},
 			statusPress: function(evt) {
 				var oTile = evt.getSource();
 				MessageToast.show(oTile.getHeader() + " was pressed.");
 			},
+			
 
 			infoPress: function(evt) {
 				var oTile = evt.getSource();
