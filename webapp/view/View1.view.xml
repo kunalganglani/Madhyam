@@ -1,72 +1,71 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-	controllerName="madhyam.controller.View1">
-	<App>
-		<!--		<VBox>
-			<Text text="1-stop Solution for Material Management and Theft Notfication"/>
-			<l:HorizontalLayout id="TileContainerExpanded" allowWrapping="true">
-				<GenericTile header="Material Status" press="statusPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
-					<tileContent>
-						<TileContent footer="{footer}">
-							<content>
-								<NumericContent value="{kpivalue}" valueColor="{color}" indicator="{trend}" scale="{scale}"/>
-							</content>
-						</TileContent>
-					</tileContent>
-				</GenericTile>
-				<GenericTile header="Material Info" press="infoPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
-					<tileContent>
-						<TileContent footer="{footer}">
-							<content>
-								<NumericContent value="{kpivalue}" valueColor="{color}" indicator="{trend}" scale="{scale}"/>
-							</content>
-						</TileContent>
-					</tileContent>
-				</GenericTile>
-			</l:HorizontalLayout>
-		</VBox>-->
-		<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
-			<items>
-				<IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Status" key="Status">
-					<Table id="idPrdList" inset="true">
-						<headerToolbar>
-							<OverflowToolbar>
-								<Title text="Material Status Info" id="TableHeader" level="H2"/>
-								<ToolbarSpacer></ToolbarSpacer>
-								<Button press="onTableRefresh" icon="sap-icon://refresh" id="tableRefreshIcon"/>
-								<Button press="onTableSettings" icon="sap-icon://action-settings" id="tableSettingsIcon"/>
-							</OverflowToolbar>
-						</headerToolbar>
-						<columns>
-							<Column id="col1" width="2em" vAlign="Middle" hAlign="Left">
-								<Text text="Material ID"/>
-							</Column>
-							<Column id="col2" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-								<Text text="Material Name"/>
-							</Column>
-							<Column id="col3" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-								<Text text="Material Status"/>
-							</Column>
-							<Column id="col4" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-								<Text text="Sensor Type"/>
-							</Column>
-							<Column id="col5" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-								<Text text="Sensor Model"/>
-							</Column>
-							<Column id="col6" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
-								<Text text="Last Checked"/>
-							</Column>
-							<Column id="col7" width="20em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Left">
-								<Text text="Material Description"/>
-							</Column>
-						</columns>
-					</Table>
-				</IconTabFilter>
-				<IconTabFilter icon="sap-icon://inventory" iconColor="Negative" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Transit"
-					key="Transit"><Text text="Table showing vehicles, their location, and shipment id table"/></IconTabFilter>
-				<IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Analytics"
-					key="Analytics"><Text text="Has analytics information shown using vizframs"/></IconTabFilter>
-				<IconTabFilter icon="sap-icon://add-product" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Add" key="Add"><Text text="Form for docing material; Asks for material id, sensor type, sensor model and creates a shipment id in return"/></IconTabFilter>
-			</items>
-		</IconTabBar>
-	</App>
+                controllerName="madhyam.controller.View1">
+                <App>
+                                <!--                        <VBox>
+                                                <Text text="1-stop Solution for Material Management and Theft Notfication"/>
+                                                <l:HorizontalLayout id="TileContainerExpanded" allowWrapping="true">
+                                                                <GenericTile header="Material Status" press="statusPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                                                                                <tileContent>
+                                                                                                <TileContent footer="{footer}">
+                                                                                                                <content>
+                                                                                                                                <NumericContent value="{kpivalue}" valueColor="{color}" indicator="{trend}" scale="{scale}"/>
+                                                                                                                </content>
+                                                                                                </TileContent>
+                                                                                </tileContent>
+                                                                </GenericTile>
+                                                                <GenericTile header="Material Info" press="infoPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                                                                                <tileContent>
+                                                                                                <TileContent footer="{footer}">
+                                                                                                                <content>
+                                                                                                                                <NumericContent value="{kpivalue}" valueColor="{color}" indicator="{trend}" scale="{scale}"/>
+                                                                                                                </content>
+                                                                                                </TileContent>
+                                                                                </tileContent>
+                                                                </GenericTile>
+                                                </l:HorizontalLayout>
+                                </VBox>-->
+                                <IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+                                                <items>
+                                                                <IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Status" key="Status">
+                                                                                <Table id="idPrdList" inset="true">
+                                                                                                <headerToolbar>
+                                                                                                                <OverflowToolbar>
+                                                                                                                                <Title text="Shelf Status" id="TableHeader" level="H2"/>
+                                                                                                                                <ToolbarSpacer></ToolbarSpacer>
+                                                                                                                                <Button press="onTableRefresh" icon="sap-icon://refresh" id="tableRefreshIcon"/>
+                                                                                                                                <Button press="onTableSettings" icon="sap-icon://action-settings" id="tableSettingsIcon"/>
+                                                                                                                </OverflowToolbar>
+                                                                                                </headerToolbar>
+                                                                                                <columns>
+                                                                                                                <Column id="col1" width="2em" vAlign="Middle" hAlign="Left">
+                                                                                                                                <Text text="Material ID"/>
+                                                                                                                </Column>
+                                                                                                                <Column id="col2" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+                                                                                                                                <Text text="Shelf ID"/>
+                                                                                                                </Column>
+                                                                                                                <Column id="col3" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+                                                                                                                                <Text text="Sesnor ID"/>
+                                                                                                                </Column>
+                                                                                                                <Column id="col4" width="2em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+                                                                                                                                <Text text="Quantity"/>
+                                                                                                                </Column>
+                                                                                                                <Column id="col7" width="20em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Left">
+                                                                                                                                <Text text="Material Status"/>
+                                                                                                                </Column>
+                                                                                                                <Column id="col6" width="5em" minScreenWidth="Desktop" demandPopin="true" vAlign="Middle" hAlign="Center">
+                                                                                                                                <Text text="Last Checked"/>
+                                                                                                                </Column>
+                                                                                                </columns>
+                                                                                </Table>
+                                                                </IconTabFilter>
+                                                                <IconTabFilter icon="sap-icon://inventory" iconColor="Negative" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Transit"
+                                                                                key="Transit"><Text text="Table showing vehicles, their location, and shipment id table"/></IconTabFilter>
+                                                                <IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Analytics"
+                                                                                key="Analytics"><Text text="Has analytics information shown using vizframs"/></IconTabFilter>
+                                                                <IconTabFilter icon="sap-icon://add-product" iconColor="Critical" 
+                                                                count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Add" key="Add">
+                                                                                <Text text="Form for docing material; Asks for material id, sensor type, sensor model and creates a shipment id in return"/></IconTabFilter>
+                                                </items>
+                                </IconTabBar>
+                </App>
 </mvc:View>
